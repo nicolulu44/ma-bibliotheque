@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ma bibliothèque</title>
+<meta name="description" content="Ma bibliothèque, application Android personnelle pour garder et retrouver ce qui compte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+  /* Le carnet rétro de l'appli : crème, bleu nuit, jaune moutarde */
+  :root {
+    --fond: #F1E4CC; --carte: #FBF4E6; --encre: #1B2340; --douce: #5A6078;
+    --bordure: #1B2340; --jaune: #F2B630; --brique: #A3412A; --ombre: #1B2340;
+    --titre: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --texte: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #161B2E; --carte: #232A47; --encre: #F1E4CC; --douce: #A9AEC6;
+      --bordure: #D9CBB0; --brique: #E8866B; --ombre: transparent;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--fond); color: var(--encre);
+    font: 400 17px/1.6 var(--texte);
+    padding: 48px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px));
+  }
+  main { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+  .surtitre { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: var(--brique); margin: 0; }
+  h1 { font-family: var(--titre); font-weight: 800; font-size: clamp(36px, 8vw, 52px); line-height: 1.05; margin: 4px 0 0; text-wrap: balance; }
+  h2 { font-family: var(--titre); font-weight: 700; font-size: 22px; margin: 0 0 8px; }
+  .chapo { font-size: 19px; color: var(--encre); margin: 0; }
+  .filet { height: 2px; background: var(--bordure); border: 0; margin: 0; }
+  .carte {
+    background: var(--carte); border: 2px solid var(--bordure); border-radius: 18px;
+    box-shadow: 4px 4px 0 var(--ombre); padding: 20px 22px;
+  }
+  ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  p { margin: 0; }
+  a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; border-radius: 4px; }
+  .bouton {
+    display: inline-block; align-self: flex-start; background: var(--jaune); color: #1B2340;
+    border: 2px solid var(--bordure); border-radius: 14px; box-shadow: 3px 3px 0 var(--ombre);
+    padding: 12px 18px; font-weight: 700; text-decoration: none;
+  }
+  footer { font-size: 14px; color: var(--douce); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="surtitre">APPLICATION ANDROID PERSONNELLE</p>
+    <h1>Ma bibliothèque</h1>
+  </header>
+  <hr class="filet">
+
+  <p class="chapo">Garder en un geste tout ce qui mérite d'être retrouvé : vidéos, articles, posts, photos et notes. Puis le retrouver par une recherche ou par jour.</p>
+
+  <section class="carte">
+    <h2>Ce que fait l'appli</h2>
+    <ul>
+      <li>Garde un lien partagé depuis n'importe quelle appli, avec son titre et son image.</li>
+      <li>Garde des notes, avec leur source, et des photos ou captures d'écran.</li>
+      <li>Range le tout par semaine, avec des tags facultatifs.</li>
+      <li>Retrouve un contenu par un mot ou par le sens, grâce à une intelligence artificielle qui fonctionne sur le téléphone, hors ligne.</li>
+      <li>Sauvegarde la bibliothèque chaque semaine dans le Google Drive de l'utilisateur, s'il le souhaite.</li>
+    </ul>
+  </section>
+
+  <section class="carte">
+    <h2>Données et confidentialité</h2>
+    <p>Tout reste sur le téléphone. Aucune donnée n'est envoyée au développeur ni à un tiers. L'accès à Google Drive est limité aux fichiers créés par l'appli.</p>
+  </section>
+
+  <a class="bouton" href="confidentialite.html">Lire les règles de confidentialité</a>
+
+  <footer>
+    <p>Ma bibliothèque est une application personnelle, non distribuée sur le Google Play Store. Développeur : <a href="https://github.com/nicolulu44">nicolulu44</a>.</p>
+  </footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidentialité de Ma bibliothèque</title>
+<meta name="description" content="Règles de confidentialité de l'application Ma bibliothèque.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --fond: #F1E4CC; --carte: #FBF4E6; --encre: #1B2340; --douce: #5A6078;
+    --bordure: #1B2340; --jaune: #F2B630; --brique: #A3412A;
+    --titre: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --texte: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fond: #161B2E; --carte: #232A47; --encre: #F1E4CC; --douce: #A9AEC6;
+      --bordure: #D9CBB0; --brique: #E8866B;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--fond); color: var(--encre);
+    font: 400 17px/1.65 var(--texte);
+    padding: 48px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px));
+  }
+  main { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 26px; }
+  .retour { font-weight: 700; font-size: 15px; }
+  .surtitre { font-size: 12px; font-weight: 700; letter-spacing: 0.18em; color: var(--brique); margin: 0; }
+  h1 { font-family: var(--titre); font-weight: 800; font-size: clamp(32px, 7vw, 44px); line-height: 1.1; margin: 4px 0 0; text-wrap: balance; }
+  h2 { font-family: var(--titre); font-weight: 700; font-size: 21px; margin: 0 0 8px; text-wrap: balance; }
+  .date { color: var(--douce); font-size: 15px; margin: 6px 0 0; }
+  .filet { height: 2px; background: var(--bordure); border: 0; margin: 0; }
+  section { display: flex; flex-direction: column; gap: 8px; }
+  .encadre { background: var(--carte); border: 2px solid var(--bordure); border-radius: 16px; padding: 18px 20px; }
+  ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+  p { margin: 0; }
+  code { font-size: 15px; background: var(--carte); border: 1px solid var(--bordure); border-radius: 6px; padding: 1px 6px; overflow-wrap: anywhere; }
+  a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; overflow-wrap: anywhere; }
+  a:focus-visible { outline: 3px solid var(--jaune); outline-offset: 3px; border-radius: 4px; }
+  footer { font-size: 14px; color: var(--douce); }
+</style>
+</head>
+<body>
+<main>
+  <a class="retour" href="./">← Ma bibliothèque</a>
+  <header>
+    <p class="surtitre">RÈGLES DE CONFIDENTIALITÉ</p>
+    <h1>Ma bibliothèque et tes données</h1>
+    <p class="date">Mises à jour le 21 octobre 2026</p>
+  </header>
+  <hr class="filet">
+
+  <section class="encadre">
+    <h2>En résumé</h2>
+    <ul>
+      <li>Tout ce que tu gardes reste sur ton téléphone.</li>
+      <li>Aucune donnée n'est envoyée au développeur ni à un tiers. Pas de compte, pas de publicité, pas de statistiques d'utilisation.</li>
+      <li>Si tu connectes Google Drive, l'appli n'accède qu'aux fichiers qu'elle a elle-même créés, pour y déposer ses sauvegardes.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Ce que l'appli conserve, et où</h2>
+    <p>Les liens, notes, images, tags et centres d'intérêt que tu gardes sont enregistrés dans la mémoire de l'appli, sur ton téléphone. L'index de recherche, la description des images et les suggestions de tags sont calculés sur le téléphone, hors ligne, par des modèles d'intelligence artificielle installés sur l'appareil. Les images sont des copies : supprimer un élément ne touche jamais aux photos de ta galerie.</p>
+  </section>
+
+  <section>
+    <h2>Quand l'appli utilise Internet</h2>
+    <ul>
+      <li><strong>Ajout d'un lien.</strong> Le téléphone lit la page publique du lien, comme le ferait un navigateur, pour en tirer le titre, l'image et le texte. Rien d'autre n'est transmis à ce site.</li>
+      <li><strong>Modèle de recherche.</strong> Le modèle de recherche par le sens est téléchargé une seule fois depuis Hugging Face. Aucune de tes données n'y est envoyée.</li>
+      <li><strong>Sauvegarde Google Drive</strong>, si tu la connectes (voir ci-dessous).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Accès à Google Drive</h2>
+    <p>La sauvegarde est facultative. Si tu touches « Connecter Google Drive », l'appli demande l'autorisation <code>drive.file</code>, la plus limitée proposée par Google : elle ne peut voir et modifier que les fichiers qu'elle a créés, jamais le reste de ton Drive.</p>
+    <p>Avec cette autorisation, l'appli :</p>
+    <ul>
+      <li>crée un dossier « Ma bibliothèque » dans ton Drive ;</li>
+      <li>y dépose une archive de ta bibliothèque (fichier ZIP) une fois par semaine, ou quand tu touches « Sauvegarder maintenant » ;</li>
+      <li>supprime les plus anciennes de ses propres archives pour n'en garder que les trois dernières.</li>
+    </ul>
+    <p>Ces archives sont stockées dans ton propre compte Google et ne sont accessibles qu'à toi. Le développeur n'y a aucun accès. L'utilisation des données obtenues par les API Google respecte le <a href="https://developers.google.com/terms/api-services-user-data-policy">règlement sur les données utilisateur des services API Google</a>, y compris les exigences d'utilisation limitée.</p>
+  </section>
+
+  <section>
+    <h2>Retirer l'accès ou effacer les données</h2>
+    <ul>
+      <li>Dans l'appli : Réglages, puis « Déconnecter » sous Sauvegarde Google Drive.</li>
+      <li>Côté Google : <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>, puis « Ma bibliothèque », « Supprimer l'accès ».</li>
+      <li>Les archives : supprime le dossier « Ma bibliothèque » de ton Drive.</li>
+      <li>Les données sur le téléphone : désinstaller l'appli les efface toutes.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Ma bibliothèque est une application personnelle, non distribuée sur le Google Play Store. Pour toute question : <a href="https://github.com/nicolulu44">github.com/nicolulu44</a>.</p>
+  </section>
+
+  <hr class="filet">
+  <footer><p><a href="./">Retour à la page d'accueil</a></p></footer>
+</main>
+</body>
+</html>
